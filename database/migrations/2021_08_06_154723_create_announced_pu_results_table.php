@@ -15,7 +15,7 @@ class CreateAnnouncedPuResultsTable extends Migration
     {
         Schema::create('announced_pu_results', function (Blueprint $table) {
             $table->id();
-            $table->string('polling_unit_uniqueid');
+            $table->string('polling_unit_id');
             $table->char('party_abbreviation');
             $table->integer('party_score');
             $table->string('entered_by_user');

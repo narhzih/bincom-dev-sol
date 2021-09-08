@@ -14,7 +14,7 @@
                     <th scope="col">Pu Description</th>
                     <th scope="col">Lat</th>
                     <th scope="col">Long</th>
-                    <th scope="col"></th>
+                    <th scope="col">*</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -26,7 +26,7 @@
                             <td>{{($pu->polling_unit_description) ? $pu->polling_unit_description : "---"}}</td>
                             <td>{{$pu->lat}}</td>
                             <td>{{$pu->long}}</td>
-                            <td class="text-center"><button class="btn btn-sm btn-dark">See results &rarr;</button></td>
+                            <td class="text-center"><a href="{{route('pu-result', ['pollingUnit' => $pu])}}" class="btn btn-sm btn-dark">See results &rarr;</a></td>
                         </tr>
                     @endforeach
                 </tbody>

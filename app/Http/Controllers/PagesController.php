@@ -18,4 +18,14 @@ class PagesController extends Controller
         ];
         return view('pu', $data);
     }
+
+    public function pollingUnitResults(PollingUnit $pollingUnit) {
+        if (!$pollingUnit) {
+            abort(404);
+        }
+
+        $pu = $pollingUnit;
+        $data = ['pu' => $pollingUnit];
+        return view('pu_result', $data);
+    }
 }

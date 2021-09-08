@@ -15,4 +15,7 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-Route::get('/polling-units', [PagesController::class, 'pollingUnits'])->name('pu');
+Route::prefix('/polling-units')->group( function() {
+    Route::get('/', [PagesController::class, 'pollingUnits'])->name('pu');
+    Route::get('/{pollingUnit}/result', [PagesController::class, 'pollingUnitResults'])->name('pu-result');
+});

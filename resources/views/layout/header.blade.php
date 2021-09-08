@@ -10,7 +10,7 @@
                     <a class="nav-link" aria-current="page" href="{{route('home')}}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('pu')}}">PU results</a>
+                    <a class="nav-link" href="{{route('pu')}}">Polling units</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>

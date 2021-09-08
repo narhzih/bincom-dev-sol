@@ -171,7 +171,7 @@ class AnnouncedPuResultsTableSeeder extends Seeder
         foreach ($announcedPuResults as $announcedPuResult) {
             DB::table('announced_pu_results')->insert([
                "id" => $announcedPuResult[0],
-               "polling_unit_uniqueid" => $announcedPuResult[1],
+               "polling_unit_id" => $announcedPuResult[1],
                "party_abbreviation" => $announcedPuResult[2],
                "party_score" => $announcedPuResult[3],
                "entered_by_user" => $announcedPuResult[4],
