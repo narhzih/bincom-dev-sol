@@ -10,7 +10,7 @@
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cum dicta distinctio in incidunt nam pariatur quibusdam, voluptate. Aliquid debitis fuga laudantium modi odit praesentium qui. Corporis dolore magni sit!
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium culpa cupiditate dolore earum eum labore laudantium molestias, necessitatibus, nemo numquam, odio pariatur perspiciatis porro praesentium recusandae rerum tempora tenetur voluptatem.
             </p>
-            <a class="btn btn-primary btn-lg" href="{{route('pu')}}" role="button">Start by viewing PU &rarr;</a>
+            <a class="btn btn-outline-dark btn-lg" href="{{route('pu')}}" role="button">Available polling units &rarr;</a>
         </div>
     </div>
 @endsection

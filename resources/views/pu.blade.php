@@ -8,10 +8,13 @@
             <table class="table table-hover table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th scope="col">PU ID</th>
-                    <th scope="col">PU Number</th>
-                    <th scope="col">PU Name</th>
-                    <th scope="col">Pu Description</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Ward</th>
+                    <th scope="col">LGA</th>
+                    <th scope="col">State</th>
                     <th scope="col">Lat</th>
                     <th scope="col">Long</th>
                     <th scope="col">*</th>
@@ -24,9 +27,12 @@
                             <td>{{$pu->polling_unit_number}}</td>
                             <td>{{$pu->polling_unit_name}}</td>
                             <td>{{($pu->polling_unit_description) ? $pu->polling_unit_description : "---"}}</td>
+                            <td>{{$pu->ward->ward_name}}</td>
+                            <td>{{$pu->lga->lga_name}}</td>
+                            <td>{{$pu->lga->state->state_name}}</td>
                             <td>{{$pu->lat}}</td>
                             <td>{{$pu->long}}</td>
-                            <td class="text-center"><a href="{{route('pu-result', ['pollingUnit' => $pu])}}" class="btn btn-sm btn-dark">See results &rarr;</a></td>
+                            <td class="text-center"><a href="{{route('pu-result', ['pollingUnit' => $pu])}}" class="btn btn-sm btn-dark">results -></a></td>
                         </tr>
                     @endforeach
                 </tbody>

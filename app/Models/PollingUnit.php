@@ -19,12 +19,12 @@ class PollingUnit extends Model
         return $this->belongsTo(Ward::class);
     }
 
-    public function Lga(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function lga(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Lga::class);
+        return $this->belongsTo(Lga::class, 'lga_id', 'lga_id');
     }
 
-    public function State(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function state(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(State::class);
     }
