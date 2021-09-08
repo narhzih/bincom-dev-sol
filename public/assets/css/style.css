@@ -8,3 +8,14 @@ body {
   background-color: #e9ecef;
   border-radius: 0.3rem;
 }
+
+.page-link {
+  color: #000000;
+  padding: 0.7rem 1.3rem;
+}
+
+.page-item.active .page-link {
+  color: whitesmoke;
+  background-color: #000000;
+  border: 1px solid #000000;
+}
