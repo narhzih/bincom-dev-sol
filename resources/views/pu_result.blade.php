@@ -6,7 +6,12 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between">
             <h3 class="text-uppercase"><b>Results page for polling units</b></h3>
-            <a href="{{url()->previous()}}" class="btn btn-dark btn-md ps-5 pe-5">&larr; Go back</a>
+            <div>
+                <a href="{{url()->previous()}}" class="btn btn-dark btn-md ps-5 pe-5">&larr; Go back</a>
+                @if ($pu && !$pu->announcedPuResult->count() > 0)
+                    <a href="{{route('pu-add-result', ['pollingUnit' => $pu])}}" class="btn btn-success btn-md ps-5 pe-5"> Add result &plus;</a>
+                @endif
+            </div>
         </div>
         <hr>
         <div>
@@ -25,13 +30,15 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($pu->announcedPuResult as $puResult)
-                <tr>
-                    <th scope="row">{{$puResult->id}}</th>
-                    <td>{{$puResult->party_abbreviation}}</td>
-                    <td>{{$puResult->party_score}}</td>
-                </tr>
-            @endforeach
+                @if ($pu->announcedPuResult)
+                    @foreach($pu->announcedPuResult as $puResult)
+                        <tr>
+                            <th scope="row">{{$puResult->id}}</th>
+                            <td>{{$puResult->party_abbreviation}}</td>
+                            <td>{{$puResult->party_score}}</td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
         </table>
     </div>

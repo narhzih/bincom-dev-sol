@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LgaController;
+use App\Http\Controllers\PollingUnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +19,14 @@ use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 
 Route::prefix('/polling-units')->group( function() {
-    Route::get('/', [PagesController::class, 'pollingUnits'])->name('pu');
-    Route::get('/{pollingUnit}/result', [PagesController::class, 'pollingUnitResults'])->name('pu-result');
+    Route::get('/', [PollingUnitController::class, 'pollingUnits'])->name('pu');
+    Route::get('/add-new/{pollingUnit}', [PollingUnitController::class, 'addNewResult'])->name('pu-add-result');
+    Route::get('/{pollingUnit}/result', [PollingUnitController::class, 'pollingUnitResults'])->name('pu-result');
 });
 
 Route::prefix('lgas')->group(function() {
-    Route::get('/', [PagesController::class, 'lgas'])->name('lgas');
-    Route::get('/get-list/{stateId}', [PagesController::class, 'getLgasUnderState']);
-    Route::get('/get-calculated-result/{lgaId}', [PagesController::class, 'getLgaCalculatedResult']);
+    Route::get('/', [LgaController::class, 'lgas'])->name('lgas');
+    Route::get('/get-list/{stateId}', [LgaController::class, 'getLgasUnderState']);
+    Route::get('/get-calculated-result/{lgaId}', [LgaController::class, 'getLgaCalculatedResult']);
 });
 
