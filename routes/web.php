@@ -15,7 +15,15 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
+
 Route::prefix('/polling-units')->group( function() {
     Route::get('/', [PagesController::class, 'pollingUnits'])->name('pu');
     Route::get('/{pollingUnit}/result', [PagesController::class, 'pollingUnitResults'])->name('pu-result');
 });
+
+Route::prefix('lgas')->group(function() {
+    Route::get('/', [PagesController::class, 'lgas'])->name('lgas');
+    Route::get('/get-list/{stateId}', [PagesController::class, 'getLgasUnderState']);
+    Route::get('/get-calculated-result/{lgaId}', [PagesController::class, 'getLgaCalculatedResult']);
+});
+

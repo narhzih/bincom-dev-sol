@@ -13,4 +13,9 @@ class Lga extends Model
     {
         return $this->belongsTo(State::class);
     }
+
+    public function pollingUnit(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(PollingUnit::class, 'lga_id', 'lga_id');
+    }
 }

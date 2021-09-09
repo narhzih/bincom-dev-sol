@@ -13,7 +13,7 @@
                     <a class="nav-link" href="{{route('pu')}}">Polling units</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="{{route('lgas')}}">LGA results</a>
                 </li>
             </ul>
         </div>
