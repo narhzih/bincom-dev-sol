@@ -1,0 +1,5 @@
+URL:  postgres://nnrslhmijcmryw:3bff51f2d117022f2fa8dbb94091ab45fa36a8bd5a343399cf4befb4e93bea48@ec2-18-215-44-132.compute-1.amazonaws.com:5432/d5klokdiavc3aq
+HOST: ec2-18-215-44-132.compute-1.amazonaws.com
+USER: nnrslhmijcmryw
+PASSWORD: 3bff51f2d117022f2fa8dbb94091ab45fa36a8bd5a343399cf4befb4e93bea48
+DBNMAE =  d5klokdiavc3aq
