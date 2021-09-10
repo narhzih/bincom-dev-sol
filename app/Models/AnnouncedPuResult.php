@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AnnouncedPuResult extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     public function pollingUnit(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {

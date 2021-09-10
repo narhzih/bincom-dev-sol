@@ -20,7 +20,8 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 
 Route::prefix('/polling-units')->group( function() {
     Route::get('/', [PollingUnitController::class, 'pollingUnits'])->name('pu');
-    Route::get('/add-new/{pollingUnit}', [PollingUnitController::class, 'addNewResult'])->name('pu-add-result');
+    Route::get('/add-result/{pollingUnit}', [PollingUnitController::class, 'addNewResult'])->name('pu-add-result');
+    Route::post('/add-result/{pollingUnit}', [PollingUnitController::class, 'doAddNewResult'])->name('do-pu-add-result');
     Route::get('/{pollingUnit}/result', [PollingUnitController::class, 'pollingUnitResults'])->name('pu-result');
 });
 
